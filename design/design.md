@@ -17,15 +17,16 @@ of helping maintain a static document site built using
 a small web server that has web pages described simply with markdown
 files would work well for most uses. The static website builder
 [hugo](https://gohugo.io/) is great, but `okayws` can be simpler and
-more opinionated, to make it easier to get a site up-and-running.
+more opinionated, to make it easier to get a site up-and-running, but
+also run the site in production. `okayws` will be a single go binary.
 
 Apart from content, though, a user will also have to find, modify or
 create a css style sheet.
 
 Markdown is a very simple way of defining web pages using simple text
-formatting instructions. For example \#\ describes a level 1 header,
-while text between \*\* symbols will be shown in **bold**. See the
-[github markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+formatting instructions. For example text after a \# describes a level 1
+header, while text between \*\* symbols will be shown in **bold**. See
+the [github markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 page for more information about this type of markdown.
 
 ## Operation
@@ -82,9 +83,20 @@ default will be development mode. If it is run in development mode and
 no `website`, `templates` or `media` directories exist, these will be
 made, together with some default content.
 
+```
+# run in development mode
+./okayws
+
+# run in production mode
+./okayws --production <project_directory>
+```
+
 In development mode, changes on the filesystem, such as the creation of
 a new file or saving a change, will automatically reload the content of
 the server to help review the rendered changes.
+
+In production mode content will be read on startup (only) and html
+gzipped for high-performance.
 
 ## Tags
 
