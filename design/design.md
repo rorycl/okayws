@@ -1,7 +1,6 @@
 # Design document
 
-Revision A  
-23 February 2023
+Revision B : <time>2023-02-24</time>
 
 This is a very terse design document for a small webserver code named
 `okayws`, intended to be an "okay web server" that makes it easy for
@@ -123,6 +122,21 @@ The `.Sections` tag would output the list of different sections, in the
 example `Scarabs` and `Pelagic` (the latter would point to
 `/pelagic/herring` as the `pelagic` section has no home page). This is
 output as an `<ul><li>...</li></ul>` unordered list.
+
+```
+{{ .Title }}
+```
+
+The `.Title` is the title of a page, which is extracted from the first
+`<h1>...</h1>` encountered for a page, otherwise the url will be used.
+This tag is normally only used in templates.
+
+```
+{{ .Date }}
+```
+The `.Date` is the date of the article or webpage, based either on the
+first `<time>...</time>` inline html in the article, or otherwise the
+date from the last modified timestamp of the file on the filesystem.
 
 ## Other stuff
 
