@@ -175,3 +175,45 @@ them:
    from the first paragraph of the article prose. Of these the date is
    the most tricky.
 
+2. image processing
+   
+   Hugo has some pretty impressive [image processing
+   capabilities](https://gohugo.io/content-management/image-processing/)
+   but most people can crop and resize images pretty easily. The most
+   useful thing `okayws` could do is resize images for different screen
+   types and (arguably) remove exif data.
+
+   Creating a set of images optimised for reading on different screens
+   is discussed in several blog posts, including [Responsive and
+   optimized images with Hugo](https://www.brycewray.com/posts/2022/06/responsive-optimized-images-hugo/)
+   and [Responsive Images in Hugo](https://www.adamwills.io/blog/responsive-images-hugo/).
+
+   One thought is that for large (> 1200px wide images) a smaller image
+   will be generated, say 600px wide, together with a LQIP low-quality
+   background for placeholders. The two images will be grouped together
+   in an html `srcset`. This doesn't necessarily solve the "art
+   direction problem" discussed on the Mozilla [responsive
+   images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+   page though. Perhaps 3 sizes might be needed -- full-size, medium and
+   small. This (together with other great suggestions in the article
+   series) is set out on Jason Grigsby's article (one of a set) at
+   [Responsive Images 101, Part 6: Picture Element](https://cloudfour.com/thinks/responsive-images-101-part-6-picture-element/).
+   The Shopify example has three images: desktop (`min-width:990px`),
+   tablet (`min-width:750px`) and a default (for mobile) for sizes under
+   that. Note that this example has fixed-width images, otherwise
+   `srcset` widths and sizes should be used, as he describes at
+   [How does the browser select the correct sizes value?](https://cloudfour.com/thinks/responsive-images-101-part-5-sizes/)
+   in section 5 of the same article series.
+
+   Based on the above and a default arrangement of generating 4 images
+   for big images (LQIP, mobile, tablet and desktop), `okayws` could
+   assess all `<img>` html attributes and the resulting resources to
+   determine if 1) alternative sizes should be generated and 2) rewrite
+   the `<img>` node to include `srcset` and `sizes` attributes.
+
+   The user could stop the system auto-generating alternative sizes by
+   specifying a flag, such as `--no-image-processing`. If a different
+   sort of (art-directed) image is needed at different sizes, the user
+   should simply ensure that the alternative images that they save
+   manually are saved _after_ the base image.
+
