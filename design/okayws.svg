@@ -27,14 +27,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1117465"
+     inkscape:zoom="3.4336428"
      inkscape:cx="57.214342"
      inkscape:cy="94.874195"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
      showgrid="false"
-     showguides="false"
+     showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1035"
      inkscape:window-height="1005"
@@ -53,6 +53,10 @@
        position="19.470073,35.315803"
        orientation="0,-1"
        id="guide1157" />
+    <sodipodi:guide
+       position="14.794782,25.053841"
+       orientation="1,0"
+       id="guide839" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -62,7 +66,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -119,7 +123,7 @@
        inkscape:export-ydpi="97.459999" />
     <path
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:1.665;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;stop-color:#000000;stop-opacity:1"
-       d="m 20.63807,23.212494 3.76816,-3.76816 3.768159,3.76816"
+       d="m 20.108903,23.212494 3.76816,-3.76816 3.768159,3.76816"
        id="path1159"
        inkscape:export-xdpi="97.459999"
        inkscape:export-ydpi="97.459999" />
